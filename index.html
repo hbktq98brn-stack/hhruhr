@@ -38,8 +38,8 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .btn--solid:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
 .btn svg{width:13px;height:13px}
 
-.document{width:210mm;margin:0 auto;padding:88px 0 110px}
-.page + .page{margin-top:28px}
+.document{max-width:210mm;margin:0 auto;padding:88px 0 110px}
+  .page + .page{margin-top:28px}
 .page{display:block;width:210mm;height:297mm;min-width:210mm;max-width:210mm;min-height:297mm;max-height:297mm;box-sizing:border-box;background:var(--paper);position:relative;overflow:hidden;box-shadow:var(--shadow);padding:0;page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
 
 .cover{background:var(--blue);color:#fff;position:relative;overflow:hidden}
@@ -77,8 +77,8 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .page__footer{position:absolute;bottom:5mm;left:12mm;right:12mm;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-mid);border-top:1px solid var(--line-w);padding-top:6px;font-weight:700;z-index:10}
 .page__footer--w{color:rgba(255,255,255,.5);border-top-color:rgba(255,255,255,.18)}
 
-.page__inner{display:flex;flex-direction:column;padding:14mm 12mm 14mm;height:100%;width:100%;box-sizing:border-box;position:relative;z-index:2}
-
+.page__inner{display:flex;flex-direction:column;padding:14mm 12mm 14mm;width:100%;box-sizing:border-box;position:relative;z-index:2}
+  
 .page--blue{background:var(--blue);color:#fff}
 .page--blue .page__mark{color:rgba(255,255,255,.6)}
 .page--blue .page__mark::before{background:var(--orange-2)}
@@ -269,17 +269,27 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
 .huge-letters{position:absolute;font-family:'Archivo Black',sans-serif;font-size:220px;line-height:.8;letter-spacing:-.06em;color:var(--blue);opacity:.06;pointer-events:none;z-index:0;text-transform:uppercase}
 
-@page{
-  size:210mm 297mm;
-  margin:0;
+.page{
+  width:210mm;
+  min-height:297mm;
+  box-sizing:border-box;
+  background:var(--paper);
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
   padding:0;
+  page-break-after:always;
+  break-after:page;
+  page-break-inside:avoid;
+  break-inside:avoid;
 }
 
 @media print{
   html, body{
     margin:0 !important;
     padding:0 !important;
-    background:#fff !important;
+    width:210mm;
+    background:var(--paper);
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
   }
@@ -293,29 +303,23 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
   }
   .page + .page{margin-top:0 !important}
   .page{
-    width:210mm !important;
-    height:297mm !important;
-    min-width:210mm !important;
-    max-width:210mm !important;
-    min-height:297mm !important;
-    max-height:297mm !important;
     box-shadow:none !important;
     margin:0 !important;
-    padding:0 !important;
-    overflow:hidden !important;
-    page-break-after:always !important;
-    break-after:page !important;
-    page-break-inside:avoid !important;
-    break-inside:avoid !important;
+    width:210mm !important;
+    min-height:297mm !important;
+    page-break-after:always;
+    break-after:page;
+    page-break-inside:avoid;
+    break-inside:avoid;
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
   }
-  .page__inner{
-    padding:14mm 12mm 14mm !important;
-  }
   .page:last-child{
-    page-break-after:auto !important;
-    break-after:auto !important;
+    page-break-after:auto;
+    break-after:auto;
+  }
+  .page__inner{
+    height:auto !important;
   }
 }
 </style>
