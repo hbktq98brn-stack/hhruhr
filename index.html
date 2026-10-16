@@ -269,28 +269,54 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
 .huge-letters{position:absolute;font-family:'Archivo Black',sans-serif;font-size:220px;line-height:.8;letter-spacing:-.06em;color:var(--blue);opacity:.06;pointer-events:none;z-index:0;text-transform:uppercase}
 
-@page{size:210mm 297mm;margin:0}
+@page{
+  size:210mm 297mm;
+  margin:0;
+  padding:0;
+}
+
 @media print{
   html, body{
     margin:0 !important;
     padding:0 !important;
+    background:#fff !important;
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
   }
   .toolbar{display:none !important}
-  .document{padding:0 !important;margin:0 !important}
+  .document{
+    padding:0 !important;
+    margin:0 !important;
+    width:210mm !important;
+    max-width:210mm !important;
+    display:block !important;
+  }
   .page + .page{margin-top:0 !important}
   .page{
+    width:210mm !important;
+    height:297mm !important;
+    min-width:210mm !important;
+    max-width:210mm !important;
+    min-height:297mm !important;
+    max-height:297mm !important;
     box-shadow:none !important;
     margin:0 !important;
-    page-break-after:always;
-    break-after:page;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    padding:0 !important;
+    overflow:hidden !important;
+    page-break-after:always !important;
+    break-after:page !important;
+    page-break-inside:avoid !important;
+    break-inside:avoid !important;
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
   }
-  .page:last-child{page-break-after:auto;break-after:auto}
+  .page__inner{
+    padding:14mm 12mm 14mm !important;
+  }
+  .page:last-child{
+    page-break-after:auto !important;
+    break-after:auto !important;
+  }
 }
 </style>
 </head>
