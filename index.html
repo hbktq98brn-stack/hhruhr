@@ -408,8 +408,8 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="funnel-row"><div class="funnel-bar" style="width:100%">Поступило откликов</div><div class="funnel-num">1000</div></div>
       <div class="funnel-row"><div class="funnel-bar funnel-bar--orange" style="width:60%">Отсеяно роботом по полям</div><div class="funnel-num">−600</div></div>
       <div class="funnel-row"><div class="funnel-bar funnel-bar--light" style="width:35%">Отсеяно ИИ-рекрутером</div><div class="funnel-num">−250</div></div>
-      <div class="funnel-row"><div class="funnel-bar funnel-bar--mid" style="width:15%">Дошло до живого рекрутера</div><div class="funnel-num">150</div></div>
-      <div class="funnel-row"><div class="funnel-bar funnel-bar--orange" style="width:5%">Приглашено на интервью</div><div class="funnel-num">50</div></div>
+      <div class="funnel-row"><div class="funnel-bar funnel-bar--mid" style="width:15%">Живой рекрутер</div><div class="funnel-num">150</div></div>
+      <div class="funnel-row"><div class="funnel-bar funnel-bar--orange" style="width:5%">Интервью</div><div class="funnel-num">50</div></div>
     </div>
 
     <div class="g3" style="margin-top:14px">
@@ -419,7 +419,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       </div>
       <div class="tile" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25)">
         <div class="tile__num" style="color:var(--orange-2)">700<sup style="color:var(--orange-2)">+</sup></div>
-        <div class="tile__label" style="color:rgba(255,255,255,.85)">Параметров оценивает ИИ-ассистент, когда читает текст. Делает выжимку и раскладывает по критериям.</div>
+        <div class="tile__label" style="color:rgba(255,255,255,.85)">Параметров оценивает ИИ-рекрутер, когда читает текст. Делает выжимку и раскладывает по критериям.</div>
       </div>
       <div class="tile" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25)">
         <div class="tile__num" style="color:var(--orange-2)">5<sup style="color:var(--orange-2)">%</sup></div>
@@ -434,10 +434,8 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <div class="callout" style="margin-top:12px;border-left-color:var(--orange-2)">
       <div class="callout__title" style="color:#fff">Мысль автора</div>
-      <p>Мне возразят: «Но ведь это просто оптимизация рутины, алгоритм экономит время рекрутера». Согласен. Только вот экономия времени для компании оборачивается потерей времени для человека. Соискатель тратит 40 минут на адаптацию резюме, пишет сопроводительное — и получает отказ через 11 минут. Это не оптимизация. Это автоматизация цинизма.</p>
-      <p>И ещё одна вещь, которую я наблюдаю годами: алгоритм — это не «умный отбор». Это способ справиться с объёмом. Если бы у компаний были нормальные процессы и уважение к кандидатам, им не нужны были бы фильтры, отсекающие 95% людей по формальным признакам.</p>
+      <p>Мне возразят: «Но ведь это просто оптимизация рутины, алгоритм экономит время рекрутера». Согласен. Только вот экономия времени для компании оборачивается потерей времени для человека. Соискатель тратит 40 минут на адаптацию резюме, пишет сопроводительное — и получает отказ через 11 минут. Это не оптимизация. Это <АВТОМАТИЗАЦИЯ ЦИНИЗМА>. Это способ справиться с объёмом. Если бы у компаний были нормальные процессы и уважение к кандидатам, им не нужны были бы фильтры, отсекающие 95% людей по формальным признакам.</p>
     </div>
-
     <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
       <div class="callout__title" style="color:#fff">Как улучшить</div>
       <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">1. Аудит данных.</strong> Проверьте обучающую выборку на репрезентативность до запуска модели. Если в ней 80% мужчин — не ждите справедливости.</p>
@@ -460,13 +458,13 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
     <div class="g2">
       <div class="tile tile--blue-fill">
         <div class="tile__meta">Отказ за 11 минут</div>
-        <div class="tile__label" style="margin-top:8px">«Мне прилетел отказ с hh через 11 минут после отклика. Я специально засёк — не может живой человек так быстро. Компания поставила AI-фильтр, который автоматически режет 70% кандидатов по совпадению слов».</div>
-        <div class="tile__meta" style="margin-top:10px;color:var(--orange-2)">notre-dame-bauge · 2026</div>
+        <div class="tile__label" style="margin-top:8px">«Мне прилетел отказ с hh.ru через 11 минут после отклика. Я специально засёк — не может живой человек так быстро. Компания поставила AI-фильтр, который автоматически режет 70% кандидатов по совпадению слов».</div>
+        <div class="tile__meta" style="margin-top:10px;color:var(--orange-2)">открытые данные · 2026</div>
       </div>
       <div class="tile">
         <div class="tile__meta" style="color:var(--orange)">Кандидат с MBA</div>
         <div class="tile__label" style="margin-top:8px">«Опыт в ведущих финансовых холдингах, диплом престижного вуза, степень MBA и ряд сертификатов — автоматический отказ. Причина: не указал ключевые слова».</div>
-        <div class="tile__meta" style="margin-top:10px">Ильдар Рахимов · TenChat · 2025</div>
+        <div class="tile__meta" style="margin-top:10px">открытые данные · 2025</div>
       </div>
       <div class="tile">
         <div class="tile__meta" style="color:var(--orange)">100% соответствие — отказ</div>
@@ -475,8 +473,8 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       </div>
       <div class="tile tile--blue-fill">
         <div class="tile__meta">«Ночные» отказы</div>
-        <div class="tile__label" style="margin-top:8px">«На hh работодатель задаёт условия, и система отсеивает несовпадающих сама, минут за пятнадцать. Те самые ночные отказы, которые приходят, когда все спят».</div>
-        <div class="tile__meta" style="margin-top:10px;color:var(--orange-2)">pikabu.ru · 2026</div>
+        <div class="tile__label" style="margin-top:8px">«На hh.ru работодатель задаёт условия, и система отсеивает несовпадающих сама, минут за пятнадцать. Те самые ночные отказы, которые приходят, когда все спят».</div>
+        <div class="tile__meta" style="margin-top:10px;color:var(--orange-2)">открытые данные · 2026</div>
       </div>
     </div>
 
@@ -490,7 +488,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <div class="callout" style="margin-top:12px;border-left-color:var(--orange)">
       <div class="callout__title" style="color:var(--orange)">Личный вывод</div>
-      <p>За два года работы с ИИ-системами в HR я видел десятки таких кейсов. И знаете, что объединяет все эти истории? Люди не злятся на то, что их не взяли. Они злятся на то, что с ними даже не поговорили. Отказ за 11 минут — это не «мы вам перезвоним». Это «мы вас не читали».</p>
+      <p>За два года работы с ИИ-системами я видел десятки таких кейсов. И знаете, что объединяет все эти истории? Люди не злятся на то, что их не взяли. Они злятся на то, что с ними даже не поговорили. Отказ за 11 минут — это не «мы вам перезвоним». Это «мы вас не читали».</p>
       <p>А ведь среди этих 95% отсеянных — врачи, инженеры, программисты, маркетологи с 15-летним опытом. Люди, которые могли бы решить реальные задачи компании. Но их резюме «не совпало по ключевым словам».</p>
     </div>
 
@@ -515,7 +513,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
     <div class="bignum-panel">
       <div>
         <div class="bignum-label">Разрыв в 40–45 лет</div>
-        <div class="bignum">17<sup>п.п.</sup></div>
+        <div class="bignum">17<sup>%</sup></div>
         <div class="bignum-desc">максимальный разрыв между мужчинами и женщинами в вероятности получить положительный ответ</div>
       </div>
       <div>
@@ -526,7 +524,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
     </div>
 
     <div class="block" style="margin-top:12px">
-      <div class="block__head"><div class="block__title">Мужчины · вероятность ответа</div><div class="block__subtitle">%</div></div>
+      <div class="block__head"><div class="block__title">Мужчины · вероятность ответа на резюме</div><div class="block__subtitle">%</div></div>
       <div class="chart-row"><div class="chart-row__label">25–30 лет</div><div class="chart-row__track"><div class="chart-row__fill" style="width:71%"></div></div><div class="chart-row__val">71%</div></div>
       <div class="chart-row"><div class="chart-row__label">35–40 лет</div><div class="chart-row__track"><div class="chart-row__fill" style="width:61%"></div></div><div class="chart-row__val">61%</div></div>
       <div class="chart-row"><div class="chart-row__label">45–50 лет</div><div class="chart-row__track"><div class="chart-row__fill" style="width:37%"></div></div><div class="chart-row__val">37%</div></div>
@@ -534,7 +532,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
     </div>
 
     <div class="block">
-      <div class="block__head"><div class="block__title">Женщины · вероятность ответа</div><div class="block__subtitle">%</div></div>
+      <div class="block__head"><div class="block__title">Женщины · вероятность ответа на резюме</div><div class="block__subtitle">%</div></div>
       <div class="chart-row"><div class="chart-row__label">25–30 лет</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:63%"></div></div><div class="chart-row__val chart-row__val--orange">63%</div></div>
       <div class="chart-row"><div class="chart-row__label">35–40 лет</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:48%"></div></div><div class="chart-row__val chart-row__val--orange">48%</div></div>
       <div class="chart-row"><div class="chart-row__label">45–50 лет</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:21%"></div></div><div class="chart-row__val chart-row__val--orange">21%</div></div>
@@ -579,7 +577,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       </div>
       <div class="tile" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)">
         <div class="tile__num" style="color:var(--orange-2)">03</div>
-        <div class="tile__label">Ошибки разметки — люди-аннотаторы привносят собственные культурные предубеждения.</div>
+        <div class="tile__label">Ошибки разметки — люди-аннотаторы привносят собственные предубеждения.</div>
       </div>
       <div class="tile" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)">
         <div class="tile__num" style="color:var(--orange-2)">04</div>
@@ -597,21 +595,20 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <blockquote class="quote" style="margin-top:12px;color:#fff">
       Если вы исключили все защищённые признаки из модели, алгоритм
-      найдёт способ воспроизвести исторические паттерны через прокси-переменные.
-      <cite>Из книги «Записки директора по ИИ»</cite>
+      найдёт способ воспроизвести исторические паттерны через прокси-переменные
+      <cite>Из книги «Записки директора по искусственному интеллекту»</cite>
     </blockquote>
 
     <div class="callout" style="margin-top:14px;border-left-color:var(--orange-2)">
       <div class="callout__title" style="color:#fff">Мысль автора</div>
       <p>Самое опасное в предвзятости — не то, что она есть. А то, что она невидима. Алгоритм не скажет: «мы отсеяли вас, потому что вам 45». Он скажет: «вы не подходите по критериям». И вы никогда не узнаете, каким именно.</p>
-      <p>Из своей практики: когда мы с командой провели аудит ИИ-скрининга резюме, оказалось, что модель систематически занижала рейтинг кандидатов из региональных вузов. Никто не закладывал это в код. Это была историческая предвзятость в данных. И именно поэтому аудит — не опция, а обязательная гигиена.</p>
     </div>
 
     <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
       <div class="callout__title" style="color:#fff">Как улучшить</div>
       <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">1.</strong> Проведите аудит обучающих данных: сравните распределение демографических групп с целевой популяцией.</p>
       <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">2.</strong> Диверсифицируйте команду, работающую над моделью. Гомогенные команды создают «слепые пятна», которых просто не видят.</p>
-      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">3.</strong> Запрашивайте у вендоров документацию о Fairness-метриках — и проводите собственное тестирование на своих данных.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">3.</strong> Запрашивайте у вендоров документацию о fairness-метриках — и проводите собственное тестирование на своих данных.</p>
     </div>
   </div>
   <div class="page__footer page__footer--w"><span>Алгоритмическая предвзятость</span><span>05 · Источники</span></div>
@@ -633,11 +630,11 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       </div>
       <div class="tile tile--blue-fill">
         <div class="tile__meta" style="color:var(--orange-2)">Реальность</div>
-        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Резюме «не открыто» у 61% соискателей. Отказ приходит до просмотра.</div>
+        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Резюме «не открыто» у 61% соискателей. Отказ приходит до просмотра</div>
       </div>
       <div class="tile tile--blue-fill">
         <div class="tile__meta" style="color:var(--orange-2)">Реальность</div>
-        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Ранжирование непрозрачно. Вакансии понижаются без объяснений.</div>
+        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Ранжирование непрозрачно. Вакансии понижаются без объяснений</div>
       </div>
       <div class="tile" style="border-color:var(--blue)">
         <div class="tile__meta" style="color:var(--orange)">Заявляет</div>
@@ -649,11 +646,11 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       </div>
       <div class="tile tile--blue-fill">
         <div class="tile__meta" style="color:var(--orange-2)">Реальность</div>
-        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">88% не получают обратной связи. 34% — отклик на «мертвую» вакансию.</div>
+        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">88% не получают обратной связи. 34% — отклик на «мертвую» вакансию</div>
       </div>
       <div class="tile tile--blue-fill">
         <div class="tile__meta" style="color:var(--orange-2)">Реальность</div>
-        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Критерии фильтрации не публикуются. 93% хотят их знать.</div>
+        <div class="tile__label" style="font-size:13px;margin-top:8px;font-weight:700">Критерии фильтрации не публикуются. 93% хотят их знать</div>
       </div>
       <div class="tile" style="border-color:var(--blue)">
         <div class="tile__meta" style="color:var(--orange)">Заявляет</div>
@@ -670,8 +667,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <div class="callout" style="margin-top:12px;border-left-color:var(--orange)">
       <div class="callout__title" style="color:var(--orange)">Мысль автора</div>
-      <p>Я не обвиняю hh.ru в злом умысле. Платформа делает то, что делает любая монополия: оптимизирует метрики, а не людей. Метрика — «количество откликов на вакансию». Метрика — «время до закрытия вакансии». Метрика — «активность пользователей».</p>
-      <p>Но за этими метриками стоит человек. Который 40 минут писал сопроводительное. Который ждал. Который получил шаблонный отказ. И пошёл писать следующее — уже без надежды.</p>
+      <p>Я не обвиняю hh.ru в злом умысле. Платформа делает то, что делает любая монополия: оптимизирует метрики, а не помогает людям найти работу. Метрика — «количество откликов на вакансию». Метрика — «время до закрытия вакансии». Метрика — «активность пользователей».</p>
       <p>Если компания зарабатывает на рынке труда, у неё есть этическая обязанность — этот рынок не ломать.</p>
     </div>
 
