@@ -271,11 +271,27 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
 @page{size:210mm 297mm;margin:0}
 @media print{
-  html, body{margin:0 !important;padding:0 !important;width:210mm;background:var(--paper)}
+  html, body{
+    margin:0 !important;
+    padding:0 !important;
+    width:210mm !important;
+    height:297mm !important;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }
   .toolbar{display:none !important}
   .document{padding:0 !important;margin:0 !important;width:210mm !important}
   .page + .page{margin-top:0 !important}
-  .page{box-shadow:none !important;margin:0 !important;page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
+  .page{
+    box-shadow:none !important;
+    margin:0 !important;
+    page-break-after:always;
+    break-after:page;
+    page-break-inside:avoid;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }
   .page:last-child{page-break-after:auto;break-after:auto}
 }
 </style>
