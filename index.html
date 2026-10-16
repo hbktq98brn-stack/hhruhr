@@ -953,7 +953,7 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <div class="g2">
       <div>
-        <div class="tile__meta" style="color:var(--orange);margin-bottom:8px">Шаг 1 · Данные</div>
+      <div class="block__head"><div class="block__title">Шаг 1 · ДАННЫЕ</div><div class="block__subtitle">целевые метрики</div></div>
         <ol class="list-num">
           <li>Распределение демографических групп в выборке</li>
           <li>Сравнение с целевой популяцией</li>
@@ -961,9 +961,9 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
         </ol>
       </div>
       <div>
-        <div class="tile__meta" style="color:var(--orange);margin-bottom:8px">Шаг 2 · Модель</div>
+      <div class="block__head"><div class="block__title">Шаг 2 · МОДЕЛЬ</div><div class="block__subtitle">целевые метрики</div></div>
         <ol class="list-num">
-          <li>Запрос Fairness-метрик у вендора</li>
+          <li>Запрос fairness-метрик у вендора</li>
           <li>Собственное тестирование на своих данных</li>
           <li>Оценка разницы ошибок между группами</li>
         </ol>
@@ -1009,13 +1009,13 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
   <div class="page__num page__num--w">14 / 14</div>
   <div class="page__inner" style="padding-top:14mm">
     <div class="kicker">Итоги разбора</div>
-    <h2 class="h-sec" style="color:#fff">Алгоритм <em style="color:var(--orange-2)">не судья</em></h2>
+    <h2 class="h-sec" style="color:#fff">Алгоритм —<em style="color:var(--orange-2)">не судья</em></h2>
 
     <div class="kpis" style="border-top-color:#fff;margin-top:16px">
-      <div style="border-right-color:rgba(255,255,255,.15)"><div class="kpi__num" style="color:#fff">70<sup style="color:var(--orange-2)">%</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">отсеивается до человека</div></div>
+      <div style="border-right-color:rgba(255,255,255,.15)"><div class="kpi__num" style="color:#fff">70<sup style="color:var(--orange-2)">%</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">резюме отсеивается до просмотра человеком</div></div>
       <div style="border-right-color:rgba(255,255,255,.15)"><div class="kpi__num" style="color:#fff">11<sup style="color:var(--orange-2)">мин</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">самый быстрый отказ</div></div>
-      <div style="border-right-color:rgba(255,255,255,.15)"><div class="kpi__num" style="color:#fff">3<sup style="color:var(--orange-2)">×</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">разрыв 25 ↔ 50+</div></div>
-      <div><div class="kpi__num" style="color:#fff">88<sup style="color:var(--orange-2)">%</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">без обратной связи</div></div>
+      <div style="border-right-color:rgba(255,255,255,.15)"><div class="kpi__num" style="color:#fff">3<sup style="color:var(--orange-2)">×</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">разрыв 25 ↔ 50+ лет</div></div>
+      <div><div class="kpi__num" style="color:#fff">88<sup style="color:var(--orange-2)">%</sup></div><div class="kpi__label" style="color:rgba(255,255,255,.65)">резюме остаются без обратной связи</div></div>
     </div>
 
     <div class="block" style="margin-top:16px">
@@ -1036,16 +1036,16 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 
     <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
       <div class="callout__title" style="color:#fff">Что делать с этим знанием</div>
-      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы соискатель:</strong> не боритесь с алгоритмом в лоб. Создайте «теневого двойника», откликайтесь утром, пишите сопроводительные вручную. И помните: 11 минут — это не оценка вас. Это оценка системы.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы соискатель:</strong> не боритесь с алгоритмом в лоб. Создайте «теневого двойника», откликайтесь утром, пишите сопроводительные вручную. И помните: 11 минут — это не оценка вас как специалиста. Это оценка системы.</p>
       <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы руководитель:</strong> задайте один вопрос своему HR-директору: «Какой процент резюме просматривается человеком до отказа?» Если ответ «не знаю» — это и есть ответ.</p>
-      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы разработчик:</strong> встройте Fairness-метрики на этапе проектирования. Аудит после запуска — это уже исправление ошибок, а не их предотвращение.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы разработчик:</strong> встройте fairness-метрики на этапе проектирования. Аудит после запуска — это уже исправление ошибок, а не их предотвращение.</p>
     </div>
 
     <div class="expert" style="margin-top:14px">
       <div class="expert__photo"><img src="C9FFD587-B19C-4F19-BC04-3869F3C6DBF0.jpeg" alt="Алексей Прохоров"></div>
       <div>
         <div class="expert__name">Алексей Прохоров</div>
-        <div class="expert__role">Директор по развитию технологий ИИ. Эксперт по цифровой трансформации в госорганах и компаниях. Автор книги «Записки директора по искусственному интеллекту».</div>
+        <div class="expert__role">Директор по развитию технологий искусственного интеллекта<br>Эксперт по цифровой трансформации в госорганах и компаниях.<br>Автор книги «Записки директора по искусственному интеллекту».</div>
         <div class="expert__links">
           <a href="https://max.ru/alproailife" target="_blank" rel="noopener">Подписаться → MAX-канал</a>
           <a href="mailto:director.brands@yandex.ru?subject=Заказ книги">Заказать книгу</a>
