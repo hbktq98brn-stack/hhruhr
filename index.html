@@ -42,7 +42,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .page + .page{margin-top:28px}
 .page{display:block;width:210mm;height:297mm;min-width:210mm;max-width:210mm;min-height:297mm;max-height:297mm;box-sizing:border-box;background:var(--paper);position:relative;overflow:hidden;box-shadow:var(--shadow);padding:0;page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
 
-/* ============ COVER ============ */
 .cover{background:var(--blue);color:#fff;position:relative;overflow:hidden}
 .cover__circle-1{position:absolute;top:-40mm;right:-40mm;width:140mm;height:140mm;border-radius:50%;border:2px solid rgba(255,255,255,.15);pointer-events:none}
 .cover__circle-2{position:absolute;top:-20mm;right:-20mm;width:100mm;height:100mm;border-radius:50%;border:2px solid rgba(232,85,30,.4);pointer-events:none}
@@ -69,19 +68,17 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .cover__bottom dd{font-family:'Archivo Black',sans-serif;font-size:13px;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.005em;margin-bottom:3px}
 .cover__bottom dd.muted{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.02em}
 
-/* ============ PAGE CHROME ============ */
-.page__mark{position:absolute;top:6mm;left:12mm;display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);font-weight:700;z-index:10}
+.page__mark{position:absolute;top:6mm;left:12mm;display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-mid);font-weight:700;z-index:10}
 .page__mark::before{content:"";width:18px;height:2px;background:var(--orange)}
 .page__mark--w{color:rgba(255,255,255,.6)}
 .page__mark--w::before{background:var(--orange-2)}
-.page__num{position:absolute;top:6mm;right:12mm;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.22em;color:var(--ink-3);font-weight:700;z-index:10}
+.page__num{position:absolute;top:6mm;right:12mm;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.22em;color:var(--blue-mid);font-weight:700;z-index:10}
 .page__num--w{color:rgba(255,255,255,.6)}
-.page__footer{position:absolute;bottom:5mm;left:12mm;right:12mm;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);border-top:1px solid var(--line-w);padding-top:6px;font-weight:700;z-index:10}
+.page__footer{position:absolute;bottom:5mm;left:12mm;right:12mm;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-mid);border-top:1px solid var(--line-w);padding-top:6px;font-weight:700;z-index:10}
 .page__footer--w{color:rgba(255,255,255,.5);border-top-color:rgba(255,255,255,.18)}
 
 .page__inner{display:flex;flex-direction:column;padding:14mm 12mm 14mm;height:100%;width:100%;box-sizing:border-box;position:relative;z-index:2}
 
-/* Blue page variant */
 .page--blue{background:var(--blue);color:#fff}
 .page--blue .page__mark{color:rgba(255,255,255,.6)}
 .page--blue .page__mark::before{background:var(--orange-2)}
@@ -112,7 +109,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .page--blue .tile__label{color:rgba(255,255,255,.82)}
 .page--blue .tile__meta{color:rgba(255,255,255,.5)}
 
-/* Dark blue page */
 .page--deep{background:var(--blue-deep);color:#fff}
 .page--deep .page__mark{color:rgba(255,255,255,.55)}
 .page--deep .page__mark::before{background:var(--orange-2)}
@@ -152,7 +148,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .page--deep .list-num li strong{color:#fff}
 .page--deep .list-num li::before{color:var(--orange-2)}
 
-/* ============ TYPOGRAPHY ============ */
 .kicker{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .kicker::before{content:"";width:16px;height:2px;background:var(--orange)}
 .h-sec{font-family:'Archivo Black',sans-serif;font-size:46px;line-height:.96;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:12px;color:var(--blue)}
@@ -160,7 +155,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .lede{font-size:13px;color:var(--blue-mid);max-width:580px;line-height:1.55;margin-bottom:18px;font-weight:500}
 .lede strong{color:var(--blue);font-weight:800}
 
-/* ============ KPI ============ */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--blue);margin:12px 0 16px}
 .kpis > div{padding:16px 10px;border-right:1px solid var(--line-w);position:relative}
 .kpis > div:last-child{border-right:none}
@@ -168,13 +162,11 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .kpi__num sup{font-size:18px;color:var(--orange);vertical-align:top;font-weight:900}
 .kpi__label{font-size:9.5px;color:var(--blue-mid);line-height:1.35;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
 
-/* ============ BLOCKS ============ */
 .block{margin-bottom:14px}
 .block__head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
 .block__title{font-family:'Archivo Black',sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:.02em;font-weight:900;color:var(--blue)}
 .block__subtitle{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:700}
 
-/* ============ CHART ROW ============ */
 .chart-row{display:grid;grid-template-columns:115px 1fr 52px;gap:12px;align-items:center;margin-bottom:7px;font-size:11px}
 .chart-row__label{color:var(--blue-mid);font-weight:600}
 .chart-row__track{height:14px;background:var(--paper-2);position:relative;overflow:hidden}
@@ -184,14 +176,12 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .chart-row__val{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:14px;text-align:right;color:var(--blue);letter-spacing:-.03em}
 .chart-row__val--orange{color:var(--orange)}
 
-/* ============ STACKED BAR ============ */
 .stack{display:flex;height:32px;margin:10px 0 8px;overflow:hidden}
 .stack > div{position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:.02em}
 .stack__legend{display:flex;gap:18px;font-size:10px;flex-wrap:wrap;margin-top:8px;font-weight:600;color:var(--blue-mid)}
 .stack__legend > div{display:flex;align-items:center;gap:6px}
 .stack__dot{width:10px;height:10px;flex-shrink:0}
 
-/* ============ BIG NUMBER PANEL ============ */
 .bignum-panel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--blue);margin:12px 0}
 .bignum-panel > div{padding:20px 18px;border-right:2px solid var(--blue);position:relative}
 .bignum-panel > div:last-child{border-right:none}
@@ -200,7 +190,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .bignum-panel .bignum-label{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-mid);font-weight:700;margin-bottom:8px}
 .bignum-panel .bignum-desc{font-size:11.5px;color:var(--blue-mid);line-height:1.45;font-weight:500}
 
-/* ============ TABLE ============ */
 .dtable{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0 12px}
 .dtable th,.dtable td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line-w);vertical-align:middle}
 .dtable th{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-mid);font-weight:700;border-bottom:2px solid var(--blue);padding-bottom:6px}
@@ -210,23 +199,19 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .dtable .num--orange{color:var(--orange)}
 .dtable .num--light{color:var(--blue-light)}
 
-/* ============ QUOTE ============ */
 .quote{border-left:4px solid var(--orange);padding:10px 0 10px 22px;margin:16px 0;font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;line-height:1.42;color:var(--blue);letter-spacing:-.01em}
 .quote cite{display:block;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-top:12px;font-weight:700}
 
-/* ============ CALLOUT ============ */
 .callout{border:1.5px solid var(--blue);border-left:4px solid var(--orange);padding:14px 18px;margin:12px 0;background:rgba(27,42,107,.03)}
 .callout__title{font-family:'Archivo Black',sans-serif;font-size:12.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:7px;line-height:1.2;color:var(--blue)}
 .callout p{font-size:11.5px;line-height:1.55;color:var(--blue-mid);font-weight:500}
 .callout p + p{margin-top:6px}
 
-/* ============ GRID ============ */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:10px 0}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
 .g2 > *,.g3 > *,.g4 > *{min-width:0}
 
-/* ============ TILE ============ */
 .tile{border:1.5px solid var(--blue);padding:16px 16px 18px;position:relative;background:#fff}
 .tile__num{font-family:'Archivo Black',sans-serif;font-size:42px;line-height:.88;letter-spacing:-.045em;color:var(--blue);margin-bottom:10px}
 .tile__num sup{font-size:18px;color:var(--orange);vertical-align:top;font-weight:900}
@@ -238,14 +223,12 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .tile--blue-fill .tile__label{color:rgba(255,255,255,.85)}
 .tile--blue-fill .tile__meta{color:rgba(255,255,255,.55)}
 
-/* ============ LIST ============ */
 .list-num{counter-reset:ln;margin:10px 0}
 .list-num li{counter-increment:ln;list-style:none;position:relative;padding:10px 0 10px 42px;border-bottom:1px solid var(--line-w);font-size:12px;line-height:1.48;color:var(--blue-mid);font-weight:500}
 .list-num li:last-child{border-bottom:none}
 .list-num li::before{content:counter(ln,decimal-leading-zero);position:absolute;left:0;top:11px;font-family:'Archivo Black',sans-serif;font-size:16px;letter-spacing:-.02em;color:var(--orange);font-weight:900;line-height:1}
 .list-num li strong{color:var(--blue);font-weight:800}
 
-/* ============ TIMELINE ============ */
 .tl-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line-w);align-items:flex-start}
 .tl-row:first-child{border-top:3px solid var(--blue)}
 .tl-row:last-child{border-bottom:3px solid var(--blue)}
@@ -254,7 +237,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .tl-title{font-family:'Archivo Black',sans-serif;font-size:14px;font-weight:900;line-height:1.15;text-transform:uppercase;margin-bottom:6px;letter-spacing:-.005em;color:var(--blue)}
 .tl-text{font-size:11.5px;color:var(--blue-mid);line-height:1.5;font-weight:500}
 
-/* ============ EXPERT ============ */
 .expert{display:grid;grid-template-columns:100px 1fr;gap:20px;align-items:center;padding:16px 0;border-top:2px solid var(--blue);border-bottom:2px solid var(--blue);margin:14px 0}
 .expert__photo{width:100px;height:100px;position:relative;overflow:hidden;background:#1a1a1a;border:2px solid var(--orange)}
 .expert__photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -267,7 +249,6 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .page--blue .expert__links a,.page--deep .expert__links a{color:var(--orange-2);border-color:var(--orange-2)}
 .page--blue .expert,.page--deep .expert{border-color:rgba(255,255,255,.3)}
 
-/* ============ FUNNEL ============ */
 .funnel-row{display:grid;grid-template-columns:1fr 60px;gap:14px;align-items:center;margin-bottom:8px}
 .funnel-bar{height:38px;background:var(--blue);display:flex;align-items:center;padding-left:16px;color:#fff;font-family:'Archivo Black',sans-serif;font-size:12px;letter-spacing:.02em;position:relative}
 .funnel-bar--orange{background:var(--orange)}
@@ -276,30 +257,17 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
 .funnel-num{font-family:'Archivo Black',sans-serif;font-size:20px;text-align:right;color:var(--blue);letter-spacing:-.03em}
 .page--blue .funnel-num,.page--deep .funnel-num{color:#fff}
 
-/* ============ DIAGONAL ACCENTS ============ */
-.diag-wrap{position:relative}
-.diag-line{position:absolute;height:2px;background:var(--orange);pointer-events:none}
-.diag-line-1{top:20%;right:-10mm;width:70mm;transform:rotate(-40deg);transform-origin:right center}
-.diag-line-2{top:80%;left:-10mm;width:60mm;transform:rotate(-40deg);transform-origin:left center}
-
-/* ============ DECOR CIRCLES ============ */
 .decor-circle{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
 .decor-circle--orange{border:2px solid rgba(232,85,30,.4)}
 .decor-circle--blue{border:2px solid rgba(27,42,107,.15)}
 .decor-circle--white{border:2px solid rgba(255,255,255,.15)}
-.decor-circle--solid-orange{background:rgba(232,85,30,.12)}
 
-/* ============ CTA ============ */
 .cta{background:var(--orange);color:#fff;padding:22px 24px;margin-top:auto;position:relative;overflow:hidden}
 .cta::before{content:"";position:absolute;top:-50px;right:-50px;width:170px;height:170px;border:3px solid rgba(255,255,255,.15);border-radius:50%}
 .cta::after{content:"";position:absolute;bottom:-60px;left:-40px;width:140px;height:140px;border:2px solid rgba(255,255,255,.1);border-radius:50%}
 .cta h3{font-family:'Archivo Black',sans-serif;font-size:24px;line-height:1.05;margin-bottom:8px;text-transform:uppercase;position:relative;z-index:2;letter-spacing:-.02em}
 .cta p{font-size:11.5px;color:rgba(255,255,255,.92);line-height:1.55;position:relative;z-index:2;max-width:460px;font-weight:500}
 
-/* ============ HUGE VERTICAL TEXT ============ */
-.huge-vertical{position:absolute;top:50%;left:-6mm;transform:translateY(-50%) rotate(-90deg);transform-origin:left center;font-family:'Archivo Black',sans-serif;font-size:96px;line-height:1;letter-spacing:-.05em;text-transform:uppercase;color:var(--blue);opacity:.08;pointer-events:none;white-space:nowrap;z-index:0}
-
-/* ============ BIG LETTERS AS GRAPHIC ============ */
 .huge-letters{position:absolute;font-family:'Archivo Black',sans-serif;font-size:220px;line-height:.8;letter-spacing:-.06em;color:var(--blue);opacity:.06;pointer-events:none;z-index:0;text-transform:uppercase}
 
 @page{size:210mm 297mm;margin:0}
@@ -460,6 +428,19 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="callout__title" style="color:#fff">Ключевой инсайт</div>
       <p style="color:rgba(255,255,255,.85)">Главный враг — не робот, а объём. Алгоритм — это способ справиться с объёмом, а не «умный отбор». Именно в этот момент «сортировки» теряются идеальные кандидаты.</p>
     </div>
+
+    <div class="callout" style="margin-top:12px;border-left-color:var(--orange-2)">
+      <div class="callout__title" style="color:#fff">Мысль автора</div>
+      <p>Мне возразят: «Но ведь это просто оптимизация рутины, алгоритм экономит время рекрутера». Согласен. Только вот экономия времени для компании оборачивается потерей времени для человека. Соискатель тратит 40 минут на адаптацию резюме, пишет сопроводительное — и получает отказ через 11 минут. Это не оптимизация. Это автоматизация цинизма.</p>
+      <p>И ещё одна вещь, которую я наблюдаю годами: алгоритм — это не «умный отбор». Это способ справиться с объёмом. Если бы у компаний были нормальные процессы и уважение к кандидатам, им не нужны были бы фильтры, отсекающие 95% людей по формальным признакам.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
+      <div class="callout__title" style="color:#fff">Как улучшить</div>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">1. Аудит данных.</strong> Проверьте обучающую выборку на репрезентативность до запуска модели. Если в ней 80% мужчин — не ждите справедливости.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">2. Fairness-метрики.</strong> Разница в частоте отказов между группами не должна превышать 10%. Всё, что выше — сигнал тревоги.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">3. Человек в цикле.</strong> Финальное решение о найме всегда должен принимать рекрутер. Алгоритм помогает — но не решает.</p>
+    </div>
   </div>
   <div class="page__footer page__footer--w"><span>hh.ru · Алгоритмическая предвзятость</span><span>02 · Механика</span></div>
 </section>
@@ -502,6 +483,18 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">Шаблонный отказ</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:78%"></div></div><div class="chart-row__val chart-row__val--orange">78%</div></div>
       <div class="chart-row"><div class="chart-row__label">Резюме не открыто</div><div class="chart-row__track"><div class="chart-row__fill" style="width:61%"></div></div><div class="chart-row__val">61%</div></div>
       <div class="chart-row"><div class="chart-row__label">Вакансия «мертвая»</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--light" style="width:34%"></div></div><div class="chart-row__val">34%</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:12px;border-left-color:var(--orange)">
+      <div class="callout__title" style="color:var(--orange)">Личный вывод</div>
+      <p>За два года работы с ИИ-системами в HR я видел десятки таких кейсов. И знаете, что объединяет все эти истории? Люди не злятся на то, что их не взяли. Они злятся на то, что с ними даже не поговорили. Отказ за 11 минут — это не «мы вам перезвоним». Это «мы вас не читали».</p>
+      <p>А ведь среди этих 95% отсеянных — врачи, инженеры, программисты, маркетологи с 15-летним опытом. Люди, которые могли бы решить реальные задачи компании. Но их резюме «не совпало по ключевым словам».</p>
+    </div>
+
+    <div class="callout" style="background:rgba(27,42,107,.05);border-color:var(--blue);border-left-color:var(--blue)">
+      <div class="callout__title" style="color:var(--blue)">Как улучшить</div>
+      <p><strong>Для соискателей:</strong> создайте «теневого двойника» резюме — не редактируйте проиндексированное, а создайте новое с точным названием должности из вакансии. ИИ ищет зеркальное отражение требований.</p>
+      <p><strong>Для работодателей:</strong> включите в отчётность метрику «доля резюме, открытых человеком до отказа». Если она ниже 50% — вы управляете не наймом, а фильтрацией.</p>
     </div>
   </div>
   <div class="page__footer"><span>hh.ru · Алгоритмическая предвзятость</span><span>03 · Кейсы</span></div>
@@ -599,11 +592,24 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">«Мёртвые» вакансии</div><div class="chart-row__track"><div class="chart-row__fill" style="width:34%"></div></div><div class="chart-row__val">34%</div></div>
     </div>
 
-    <blockquote class="quote" style="margin-top:16px;color:#fff">
+    <blockquote class="quote" style="margin-top:12px;color:#fff">
       Если вы исключили все защищённые признаки из модели, алгоритм
       найдёт способ воспроизвести исторические паттерны через прокси-переменные.
       <cite>Из книги «Записки директора по ИИ»</cite>
     </blockquote>
+
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange-2)">
+      <div class="callout__title" style="color:#fff">Мысль автора</div>
+      <p>Самое опасное в предвзятости — не то, что она есть. А то, что она невидима. Алгоритм не скажет: «мы отсеяли вас, потому что вам 45». Он скажет: «вы не подходите по критериям». И вы никогда не узнаете, каким именно.</p>
+      <p>Из своей практики: когда мы с командой провели аудит ИИ-скрининга резюме, оказалось, что модель систематически занижала рейтинг кандидатов из региональных вузов. Никто не закладывал это в код. Это была историческая предвзятость в данных. И именно поэтому аудит — не опция, а обязательная гигиена.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
+      <div class="callout__title" style="color:#fff">Как улучшить</div>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">1.</strong> Проведите аудит обучающих данных: сравните распределение демографических групп с целевой популяцией.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">2.</strong> Диверсифицируйте команду, работающую над моделью. Гомогенные команды создают «слепые пятна», которых просто не видят.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">3.</strong> Запрашивайте у вендоров документацию о Fairness-метриках — и проводите собственное тестирование на своих данных.</p>
+    </div>
   </div>
   <div class="page__footer page__footer--w"><span>hh.ru · Алгоритмическая предвзятость</span><span>05 · Источники</span></div>
 </section>
@@ -658,6 +664,20 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">Причина отказа</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:88%"></div></div><div class="chart-row__val chart-row__val--orange">88%</div></div>
       <div class="chart-row"><div class="chart-row__label">Алгоритм мэтчинга</div><div class="chart-row__track"><div class="chart-row__fill" style="width:64%"></div></div><div class="chart-row__val">64%</div></div>
     </div>
+
+    <div class="callout" style="margin-top:12px;border-left-color:var(--orange)">
+      <div class="callout__title" style="color:var(--orange)">Мысль автора</div>
+      <p>Я не обвиняю hh.ru в злом умысле. Платформа делает то, что делает любая монополия: оптимизирует метрики, а не людей. Метрика — «количество откликов на вакансию». Метрика — «время до закрытия вакансии». Метрика — «активность пользователей».</p>
+      <p>Но за этими метриками стоит человек. Который 40 минут писал сопроводительное. Который ждал. Который получил шаблонный отказ. И пошёл писать следующее — уже без надежды.</p>
+      <p>Если компания зарабатывает на рынке труда, у неё есть этическая обязанность — этот рынок не ломать.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(27,42,107,.05);border-color:var(--blue);border-left-color:var(--blue)">
+      <div class="callout__title" style="color:var(--blue)">Как улучшить</div>
+      <p><strong>Публикуйте критерии фильтрации.</strong> 93% соискателей хотят их знать. Это не ослабит платформу — это повысит доверие.</p>
+      <p><strong>Введите обязательную обратную связь.</strong> Хотя бы автоматическую, но с указанием причины: «не прошли по опыту», «не прошли по ключевым словам», «резюме просмотрено».</p>
+      <p><strong>Создайте независимый аудит алгоритмов.</strong> Как финансовый аудит — обязательный и публичный.</p>
+    </div>
   </div>
   <div class="page__footer"><span>hh.ru · Алгоритмическая предвзятость</span><span>06 · Лукавство</span></div>
 </section>
@@ -708,6 +728,18 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
         <div class="bignum" style="color:var(--orange-2)">44<sup style="color:var(--orange-2)">%</sup></div>
       </div>
     </div>
+
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange-2)">
+      <div class="callout__title" style="color:#fff">Личный вывод</div>
+      <p>Цифра «62% HR не знают, как устроены ИИ-системы» меня не удивляет — она меня пугает. Потому что означает простую вещь: люди, которые отсеивают кандидатов, не понимают инструмент, которым пользуются. Они доверяют чёрному ящику.</p>
+      <p>И вот парадокс: соискатель обязан знать свои права, обязан адаптировать резюме, обязан проходить тесты. А компания, которая его отсеивает, не обязана понимать, как работает её собственный фильтр.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
+      <div class="callout__title" style="color:#fff">Как улучшить</div>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Для HR:</strong> обязательное обучение основам работы ИИ-систем. Не «как нажимать кнопки», а «как устроен алгоритм, какие у него ограничения, где он ошибается».</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Для разработчиков:</strong> используйте Explainable AI (XAI). Покажите HR, какие факторы повлияли на решение — это не просто «прозрачность», это инструмент для выявления ошибок.</p>
+    </div>
   </div>
   <div class="page__footer page__footer--w"><span>hh.ru · Алгоритмическая предвзятость</span><span>07 · Исследования</span></div>
 </section>
@@ -754,6 +786,18 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
         <div class="bignum-desc">ФТК США предупредила: ложные заявления об отсутствии предвзятости = нарушение закона</div>
       </div>
     </div>
+
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange)">
+      <div class="callout__title" style="color:var(--orange)">Мысль автора</div>
+      <p>Россия в этой истории — не первооткрыватель. И это хорошо: у нас есть шанс учиться на чужих ошибках, а не набивать свои. Суды в США уже создали прецеденты: вендор алгоритма несёт ответственность наравне с работодателем. В России этого пока нет.</p>
+      <p>Но окно возможностей закрывается. Если мы не начнём регулировать алгоритмическую предвзятость сейчас, через три года будем разбирать сотни дел — вместо того чтобы их предотвратить.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(27,42,107,.05);border-color:var(--blue);border-left-color:var(--blue)">
+      <div class="callout__title" style="color:var(--blue)">Как улучшить</div>
+      <p><strong>Урок из Amazon:</strong> если модель обучалась на исторических данных — она воспроизведёт исторические предубеждения. Не потому что «плохая», а потому что «данные такие».</p>
+      <p><strong>Урок из Workday:</strong> ответственность за дискриминацию несёт не только работодатель, но и вендор алгоритма. Это меняет правила игры для всей индустрии.</p>
+    </div>
   </div>
   <div class="page__footer"><span>hh.ru · Алгоритмическая предвзятость</span><span>08 · Мировой опыт</span></div>
 </section>
@@ -788,11 +832,18 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">На рассмотрении</div><div class="chart-row__track"><div class="chart-row__fill" style="width:19%"></div></div><div class="chart-row__val">19%</div></div>
     </div>
 
-    <blockquote class="quote" style="color:#fff">
-      Суды восстанавливают сотрудников по общим нормам ТК, а не по специальному
-      регулированию ИИ. Прозрачность алгоритмов не закреплена в праве.
-      <cite>Анализ российских дел · 2024–2025</cite>
-    </blockquote>
+    <div class="callout" style="margin-top:12px;border-left-color:var(--orange-2)">
+      <div class="callout__title" style="color:#fff">Личный вывод</div>
+      <p>Все три российских дела объединяет одно: суды восстанавливают справедливость по общим нормам, а не по специальному регулированию ИИ. Это значит, что каждый следующий случай — это снова идти в суд, снова доказывать, снова тратить годы.</p>
+      <p>Но есть и хорошая новость: суды уже признают, что «мы доверились алгоритму» — не оправдание. Это создаёт основу для системного регулирования.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
+      <div class="callout__title" style="color:#fff">Как улучшить</div>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">1.</strong> Закрепить в ТК РФ понятие «алгоритмическая дискриминация» — как отдельное основание для иска.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">2.</strong> Ввести обязательную сертификацию HR-алгоритмов — как для финансовых систем.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">3.</strong> Создать реестр ИИ-систем, влияющих на трудовые права, с обязательной публикацией Fairness-метрик.</p>
+    </div>
   </div>
   <div class="page__footer page__footer--w"><span>hh.ru · Алгоритмическая предвзятость</span><span>09 · Практика РФ</span></div>
 </section>
@@ -837,6 +888,18 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">Fairness-аудит</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:8%"></div></div><div class="chart-row__val chart-row__val--orange">8%</div></div>
       <div class="chart-row"><div class="chart-row__label">Компаний с политикой</div><div class="chart-row__track"><div class="chart-row__fill" style="width:21%"></div></div><div class="chart-row__val">21%</div></div>
       <div class="chart-row"><div class="chart-row__label">Прозрачных алгоритмов</div><div class="chart-row__track"><div class="chart-row__fill chart-row__fill--orange" style="width:4%"></div></div><div class="chart-row__val chart-row__val--orange">4%</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange)">
+      <div class="callout__title" style="color:var(--orange)">Мысль автора</div>
+      <p>Российское регулирование ИИ пока напоминает мне пожарную сигнализацию без огнетушителя: сигнал есть, а инструментов для тушения — нет. Кодекс ЦБ работает только для финансового сектора. ГОСТ — рекомендательный. ФЗ № 243-ФЗ — про разработчиков моделей, а не про их применение в найме.</p>
+      <p>Пробел очевиден: нет отдельного регулирования алгоритмов, влияющих на трудовые права. Это значит, что hh.ru и другие платформы пока не обязаны раскрывать логику своих фильтров.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(27,42,107,.05);border-color:var(--blue);border-left-color:var(--blue)">
+      <div class="callout__title" style="color:var(--blue)">Что можно взять из мирового опыта</div>
+      <p><strong>EU AI Act</strong> — вводит категорию «высокого риска» для систем, влияющих на доступ к работе. Для них обязательны: оценка соответствия, человеческий надзор, техническая документация, мониторинг после запуска.</p>
+      <p><strong>New York Local Law 144</strong> — обязывает компании публиковать результаты аудита алгоритмов найма. Не «мы стремимся к справедливости», а «вот цифры — проверьте сами».</p>
     </div>
   </div>
   <div class="page__footer"><span>hh.ru · Алгоритмическая предвзятость</span><span>10 · Регулирование</span></div>
@@ -927,6 +990,19 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="tile tile--orange"><div class="tile__num">5</div><div class="tile__label" style="color:var(--blue)">красных флагов</div></div>
       <div class="tile"><div class="tile__num">2</div><div class="tile__label">года — срок данных</div></div>
     </div>
+
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange)">
+      <div class="callout__title" style="color:var(--orange)">Мысль автора</div>
+      <p>Аудит — это не разовое мероприятие. Это процесс. Я рекомендую проверять ИИ-системы не реже одного раза в квартал. И не только на входе — но и в процессе работы. Модели «дрейфуют»: то, что работало в январе, может стать предвзятым в июне.</p>
+      <p>Ещё один момент, который часто упускают: аудит должен быть независимым. Не сам вендор должен проверять свой алгоритм. И не только HR-отдел. Нужна третья сторона — с доступом к данным и правом остановить систему.</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(27,42,107,.05);border-color:var(--blue);border-left-color:var(--blue)">
+      <div class="callout__title" style="color:var(--blue)">Инструменты для аудита</div>
+      <p><strong>IBM AI Fairness 360</strong> — открытая библиотека для обнаружения и смягчения предвзятости в моделях машинного обучения.</p>
+      <p><strong>SHAP и LIME</strong> — для объяснения решений модели: какие факторы повлияли на конкретный отказ.</p>
+      <p><strong>FairHR-X</strong> — открытый фреймворк для аудита алгоритмов найма с сохранением точности модели при снижении демографического дисбаланса.</p>
+    </div>
   </div>
   <div class="page__footer"><span>hh.ru · Алгоритмическая предвзятость</span><span>12 · Аудит</span></div>
 </section>
@@ -957,7 +1033,21 @@ body{font-family:'Archivo',system-ui,sans-serif;font-size:14px;background:#DCD8C
       <div class="chart-row"><div class="chart-row__label">Отказ по полу</div><div class="chart-row__track"><div class="chart-row__fill" style="width:29%"></div></div><div class="chart-row__val">29%</div></div>
     </div>
 
-    <div class="expert" style="margin-top:16px">
+    <div class="callout" style="margin-top:14px;border-left-color:var(--orange-2)">
+      <div class="callout__title" style="color:#fff">Главный вывод</div>
+      <p>Алгоритмы не злые. Они не предвзятые «по своей природе». Они просто делают то, чему их научили. Если их учили на исторических данных, где женщинам платили меньше, а людей старше 45 не брали — они это воспроизведут. И будут уверены, что «так правильно».</p>
+      <p>Проблема не в технологии. Проблема в том, что мы позволяем технологии принимать решения, которые должны принимать люди. Или, по крайней мере, не проверяем, что она решила.</p>
+      <p>Будущее найма — не в «умных алгоритмах», а в гибридных системах, где ИИ делает рутину, а человек — суждение. Где прозрачность не опция, а стандарт. Где кандидат получает не «отказ через 11 минут», а ответ на вопрос «почему».</p>
+    </div>
+
+    <div class="callout" style="margin-top:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);border-left-color:#fff">
+      <div class="callout__title" style="color:#fff">Что делать с этим знанием</div>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы соискатель:</strong> не боритесь с алгоритмом в лоб. Создайте «теневого двойника», откликайтесь утром, пишите сопроводительные вручную. И помните: 11 минут — это не оценка вас. Это оценка системы.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы руководитель:</strong> задайте один вопрос своему HR-директору: «Какой процент резюме просматривается человеком до отказа?» Если ответ «не знаю» — это и есть ответ.</p>
+      <p style="color:rgba(255,255,255,.88)"><strong style="color:#fff">Если вы разработчик:</strong> встройте Fairness-метрики на этапе проектирования. Аудит после запуска — это уже исправление ошибок, а не их предотвращение.</p>
+    </div>
+
+    <div class="expert" style="margin-top:14px">
       <div class="expert__photo"><img src="C9FFD587-B19C-4F19-BC04-3869F3C6DBF0.jpeg" alt="Алексей Прохоров"></div>
       <div>
         <div class="expert__name">Алексей Прохоров</div>
