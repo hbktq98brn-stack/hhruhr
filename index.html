@@ -6,7 +6,7 @@
 <title>hh.ru · Алгоритмическая предвзятость</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F2F0EB;
@@ -46,7 +46,7 @@ body{
 }
 .toolbar__brand{
   font-family:'Archivo Black',sans-serif;
-  font-weight:900;font:-size:15px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:900;font-size:15px;letter-spacing:.08em;text-transform:uppercase;
 }
 .toolbar__brand span{color:var(--red)}
 .toolbar__actions{display:flex;gap:12px}
@@ -64,24 +64,29 @@ body{
 .btn--ghost:hover{background:var(--ink);color:#fff}
 .btn svg{width:15px;height:15px;flex-shrink:0}
 
-/* ============ DOCUMENT ============ */
+/* ============ DOCUMENT (block, not flex) ============ */
 .document{
-  max-width:210mm;
+  width:210mm;
   margin:0 auto;
   padding:100px 0 140px;
-  display:flex;flex-direction:column;gap:40px;
 }
+.page + .page{margin-top:40px}
+
+/* ============ PAGE — строго A4 ============ */
 .page{
+  display:block;
   width:210mm;
-  height297mm;
+  height:297mm;
+  min-width:210mm;
+  max-width:210mm;
+  min-height:297mm;
+  max-height:297mm;
   box-sizing:border-box;
   background:var(--paper);
   position:relative;
   overflow:hidden;
   box-shadow:var(--shadow);
   padding:0;
-  display:flex;
-  flex-direction:column;
   page-break-after:always;
   break-after:page;
   page-break-inside:avoid;
@@ -90,11 +95,12 @@ body{
 
 /* ============ PAGE INNER ============ */
 .page__inner{
-  flex:1;
   display:flex;
   flex-direction:column;
   padding:14mm 14mm 16mm;
-  min-height:0;
+  height:100%;
+  width:100%;
+  box-sizing:border-box;
 }
 .page__mark{
   position:absolute;top:8mm;left:14mm;
@@ -163,9 +169,11 @@ body{
 }
 .cover__inner{
   position:relative;z-index:2;
-  flex:1;
-  display:flex;flex-direction:column;
+  display:flex;
+  flex-direction:column;
+  height:100%;
   padding:14mm;
+  box-sizing:border-box;
 }
 .cover__top{
   display:flex;justify-content:space-between;align-items:flex-start;
@@ -182,7 +190,8 @@ body{
 }
 .cover__main{
   flex:1;
-  display:flex;flex-direction:column;
+  display:flex;
+  flex-direction:column;
   justify-content:center;
   padding:8mm 0;
 }
@@ -199,7 +208,7 @@ body{
 .cover__title{
   font-family:'Archivo Black',sans-serif;
   font-weight:900;
-  font-size:88px;
+  font-size:82px;
   line-height:.88;
   letter-spacing:-.035em;
   text-transform:uppercase;
@@ -211,9 +220,9 @@ body{
   display:block;
 }
 .cover__sub{
-  font-size:16px;
+  font-size:15px;
   color:rgba(255,255,255,.75);
-  max-width:480px;
+  max-width:460px;
   line-height:1.55;
 }
 .cover__meta{
@@ -237,14 +246,14 @@ body{
 }
 .cover__meta dd{
   font-family:'Archivo',sans-serif;
-  font-size:15px;font-weight:700;
+  font-size:14px;font-weight:700;
   color:#fff;line-height:1.25;
   letter-spacing:-.01em;
   margin-bottom:2px;
 }
 .cover__meta dd.muted{
   font-family:'IBM Plex Mono',monospace;
-  font-size:10.5px;font-weight:400;
+  font-size:10px;font-weight:400;
   color:rgba(255,255,255,.55);
   letter-spacing:.02em;
 }
@@ -267,7 +276,7 @@ body{
 .h-sec{
   font-family:'Archivo Black',sans-serif;
   font-weight:900;
-  font-size:42px;
+  font-size:38px;
   line-height:1.02;
   letter-spacing:-.025em;
   text-transform:uppercase;
@@ -280,20 +289,9 @@ body{
 .page--yellow .h-sec{color:var(--ink)}
 .page--yellow .h-sec em{color:var(--red)}
 
-.h-mid{
-  font-family:'Archivo Black',sans-serif;
-  font-weight:900;
-  font-size:24px;
-  line-height:1.1;
-  letter-spacing:-.015em;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-.h-mid em{font-style:normal;color:var(--red)}
-
 .lede{
-  font-size:14px;color:var(--ink-2);max-width:580px;
-  line-height:1.55;margin-bottom:20px;
+  font-size:13.5px;color:var(--ink-2);max-width:560px;
+  line-height:1.55;margin-bottom:18px;
 }
 .page--dark .lede{color:rgba(255,255,255,.75)}
 .page--red .lede{color:rgba(255,255,255,.9)}
@@ -303,7 +301,7 @@ body{
   display:grid;
   gap:0;
   border-top:3px solid var(--ink);
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 .page--dark .stat-grid{border-top-color:#fff}
 .page--red .stat-grid{border-top-color:#fff}
@@ -311,9 +309,9 @@ body{
 .stat-row{
   display:grid;
   grid-template-columns:1.1fr 2fr;
-  gap:24px;
+  gap:22px;
   align-items:center;
-  padding:16px 0;
+  padding:14px 0;
   border-bottom:1px solid var(--line-soft);
 }
 .page--dark .stat-row{border-bottom-color:rgba(255,255,255,.15)}
@@ -322,7 +320,7 @@ body{
 .stat-row__num{
   font-family:'Archivo Black',sans-serif;
   font-weight:900;
-  font-size:72px;
+  font-size:64px;
   line-height:.88;
   letter-spacing:-.04em;
   color:var(--ink);
@@ -330,21 +328,21 @@ body{
 .page--dark .stat-row__num{color:#fff}
 .page--red .stat-row__num{color:#fff}
 .stat-row__num sup{
-  font-size:28px;color:var(--red);
+  font-size:26px;color:var(--red);
   vertical-align:top;margin-left:3px;
   font-weight:700;
 }
 .page--red .stat-row__num sup{color:#fff}
 
 .stat-row__label{
-  font-size:13px;color:var(--ink-2);
+  font-size:12.5px;color:var(--ink-2);
   line-height:1.5;margin-bottom:6px;
 }
 .page--dark .stat-row__label{color:rgba(255,255,255,.85)}
 .page--red .stat-row__label{color:rgba(255,255,255,.95)}
 .stat-row__src{
   font-family:'IBM Plex Mono',monospace;
-  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  font-size:9px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--ink-3);font-weight:600;
 }
 .page--dark .stat-row__src{color:rgba(255,255,255,.5)}
@@ -354,13 +352,13 @@ body{
 .quote{
   border-left:5px solid var(--red);
   padding:8px 0 8px 22px;
-  margin:18px 0;
+  margin:16px 0;
   font-family:'Archivo',sans-serif;
   font-weight:600;
-  font-size:18px;line-height:1.4;
+  font-size:17px;line-height:1.4;
   color:var(--ink);
   letter-spacing:-.005em;
-  max-width:640px;
+  max-width:620px;
 }
 .page--dark .quote{color:#fff}
 .page--red .quote{color:#fff}
@@ -368,15 +366,15 @@ body{
   display:block;font-style:normal;
   font-family:'IBM Plex Mono',monospace;
   font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--red);margin-top:14px;font-weight:700;
+  color:var(--red);margin-top:12px;font-weight:700;
 }
 .page--red .quote cite{color:#fff}
 
 /* ============ CALLOUT ============ */
 .callout{
   border:2px solid var(--ink);
-  padding:16px 18px;
-  margin:12px 0;
+  padding:14px 16px;
+  margin:10px 0;
   position:relative;
   background:transparent;
 }
@@ -389,12 +387,12 @@ body{
 
 .callout__title{
   font-family:'Archivo Black',sans-serif;
-  font-weight:900;font-size:14px;
+  font-weight:900;font-size:13.5px;
   text-transform:uppercase;
   letter-spacing:.02em;
-  margin-bottom:8px;line-height:1.2;
+  margin-bottom:7px;line-height:1.2;
 }
-.callout p{font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.callout p{font-size:12px;line-height:1.5;color:var(--ink-2)}
 .page--dark .callout p{color:rgba(255,255,255,.85)}
 .page--red .callout p{color:rgba(255,255,255,.95)}
 .callout--filled p{color:rgba(255,255,255,.85)}
@@ -402,8 +400,8 @@ body{
 .callout p + p{margin-top:6px}
 
 /* ============ GRID ============ */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:14px 0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0}
 .g2 > *,.g3 > *{min-width:0}
 
 /* ============ PILL ============ */
@@ -420,14 +418,14 @@ body{
 .pill--red{border-color:var(--red);color:var(--red)}
 
 /* ============ LIST ============ */
-.list-num{counter-reset:ln;margin:12px 0}
+.list-num{counter-reset:ln;margin:10px 0}
 .list-num li{
   counter-increment:ln;
   list-style:none;
   position:relative;
-  padding:12px 0 12px 52px;
+  padding:11px 0 11px 48px;
   border-bottom:1px solid var(--line-soft);
-  font-size:13px;line-height:1.55;color:var(--ink-2);
+  font-size:12.5px;line-height:1.5;color:var(--ink-2);
 }
 .page--dark .list-num li{
   border-bottom-color:rgba(255,255,255,.15);
@@ -439,9 +437,9 @@ body{
 }
 .list-num li::before{
   content:counter(ln,decimal-leading-zero);
-  position:absolute;left:0;top:14px;
+  position:absolute;left:0;top:13px;
   font-family:'Archivo Black',sans-serif;
-  font-size:20px;letter-spacing:-.02em;
+  font-size:18px;letter-spacing:-.02em;
   color:var(--red);font-weight:900;
   line-height:1;
 }
@@ -450,8 +448,8 @@ body{
 .page--dark .list-num li strong{color:#fff}
 
 /* ============ BARS ============ */
-.bars{margin:12px 0}
-.bar{margin-bottom:14px}
+.bars{margin:10px 0}
+.bar{margin-bottom:12px}
 .bar__head{
   display:flex;justify-content:space-between;align-items:baseline;
   margin-bottom:6px;
@@ -459,7 +457,7 @@ body{
 }
 .bar__head b{
   font-family:'Archivo Black',sans-serif;
-  font-weight:900;font-size:18px;color:var(--ink);
+  font-weight:900;font-size:17px;color:var(--ink);
 }
 .page--dark .bar__head{color:rgba(255,255,255,.7)}
 .page--dark .bar__head b{color:#fff}
@@ -474,9 +472,9 @@ body{
 
 .tl-row{
   display:grid;
-  grid-template-columns:140px 1fr;
-  gap:22px;
-  padding:16px 0;
+  grid-template-columns:130px 1fr;
+  gap:20px;
+  padding:14px 0;
   border-bottom:1px solid var(--line-soft);
   align-items:flex-start;
 }
@@ -486,7 +484,7 @@ body{
 .tl-row__date{
   font-family:'Archivo Black',sans-serif;
   font-weight:900;
-  font-size:18px;
+  font-size:16px;
   text-transform:uppercase;
   letter-spacing:-.01em;
   color:var(--red);
@@ -506,36 +504,21 @@ body{
 
 .tl-row__title{
   font-family:'Archivo Black',sans-serif;
-  font-size:17px;font-weight:900;
+  font-size:16px;font-weight:900;
   line-height:1.15;
   text-transform:uppercase;
-  margin-bottom:8px;
+  margin-bottom:7px;
   letter-spacing:-.005em;
 }
 .page--dark .tl-row__title{color:#fff}
 .page--red .tl-row__title{color:#fff}
 .tl-row__text{
-  font-size:12.5px;
+  font-size:12px;
   color:var(--ink-2);
-  line-height:1.55;
+  line-height:1.5;
 }
 .page--dark .tl-row__text{color:rgba(255,255,255,.8)}
 .page--red .tl-row__text{color:rgba(255,255,255,.9)}
-
-/* ============ BIG NUMBER ============ */
-.big-num{
-  font-family:'Archivo Black',sans-serif;
-  font-weight:900;
-  font-size:160px;
-  line-height:.8;
-  letter-spacing:-.05em;
-  color:var(--red);
-  margin-bottom:-10px;
-}
-.big-num--outline{
-  -webkit-text-stroke:3px var(--red);
-  color:transparent;
-}
 
 /* ============ TAG ============ */
 .tag{
@@ -544,23 +527,23 @@ body{
   font-size:9px;letter-spacing:.22em;text-transform:uppercase;
   font-weight:700;
   color:var(--ink-3);
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 .tag--red{color:var(--red)}
 
 /* ============ EXPERT ============ */
 .expert{
-  display:grid;grid-template-columns:110px 1fr;gap:22px;
+  display:grid;grid-template-columns:100px 1fr;gap:20px;
   align-items:center;
-  padding:18px 0;
+  padding:16px 0;
   border-top:2px solid var(--ink);
   border-bottom:2px solid var(--ink);
-  margin:16px 0;
+  margin:14px 0;
 }
 .page--dark .expert{border-color:rgba(255,255,255,.3)}
 .page--red .expert{border-color:rgba(255,255,255,.5)}
 .expert__photo{
-  width:110px;height:110px;
+  width:100px;height:100px;
   border-radius:0;
   position:relative;overflow:hidden;
   background:linear-gradient(135deg,#1a1a1a 0%,#2c2c2a 100%);
@@ -568,10 +551,11 @@ body{
 }
 .expert__photo img{
   width:100%;height:100%;object-fit:cover;
+  display:block;
 }
 .expert__name{
   font-family:'Archivo Black',sans-serif;
-  font-weight:900;font-size:22px;
+  font-weight:900;font-size:20px;
   letter-spacing:-.015em;
   text-transform:uppercase;
   margin-bottom:6px;
@@ -579,17 +563,17 @@ body{
 .page--dark .expert__name{color:#fff}
 .page--red .expert__name{color:#fff}
 .expert__role{
-  font-size:11.5px;
+  font-size:11px;
   color:var(--ink-2);
   margin-bottom:10px;
-  line-height:1.5;
+  line-height:1.45;
 }
 .page--dark .expert__role{color:rgba(255,255,255,.75)}
 .page--red .expert__role{color:rgba(255,255,255,.9)}
-.expert__links{display:flex;gap:16px;flex-wrap:wrap}
+.expert__links{display:flex;gap:14px;flex-wrap:wrap}
 .expert__links a{
   font-family:'IBM Plex Mono',monospace;
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--red);text-decoration:none;
   border-bottom:2px solid var(--red);
   padding-bottom:3px;
@@ -601,7 +585,7 @@ body{
 /* ============ CTA ============ */
 .cta{
   background:var(--red);color:#fff;
-  padding:24px 26px;
+  padding:22px 24px;
   margin-top:auto;
   position:relative;overflow:hidden;
 }
@@ -612,21 +596,21 @@ body{
 }
 .cta h3{
   font-family:'Archivo Black',sans-serif;
-  font-weight:900;font-size:28px;
+  font-weight:900;font-size:26px;
   line-height:1.05;
   margin-bottom:10px;
   text-transform:uppercase;
   position:relative;z-index:2;letter-spacing:-.015em;
 }
 .cta p{
-  font-size:12.5px;
+  font-size:12px;
   color:rgba(255,255,255,.9);
-  line-height:1.55;
+  line-height:1.5;
   position:relative;z-index:2;
-  max-width:460px;
+  max-width:440px;
 }
 .cta__meta{
-  display:flex;gap:22px;margin-top:16px;
+  display:flex;gap:22px;margin-top:14px;
   position:relative;z-index:2;
   font-family:'IBM Plex Mono',monospace;
   font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
@@ -638,7 +622,8 @@ body{
 @media print{
   html, body{margin:0 !important;padding:0 !important;width:210mm;background:var(--paper)}
   .toolbar{display:none !important}
-  .document{padding:0 !important;margin:0 !important;gap:0 !important;max-width:none !important;display:block !important}
+  .document{padding:0 !important;margin:0 !important;width:210mm !important}
+  .page + .page{margin-top:0 !important}
   .page{box-shadow:none !important;margin:0 !important;page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
   .page:last-child{page-break-after:auto;break-after:auto}
 }
@@ -665,7 +650,6 @@ body{
 <!-- ==================== PAGE 1 · COVER ==================== -->
 <section class="page cover">
   <div class="cover__stripes"></div>
-
   <div class="cover__inner">
     <div class="cover__top">
       <span class="stamp">REPORT · 2026</span>
@@ -764,7 +748,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 3 · HOW IT WORKS (dark) ==================== -->
+<!-- ==================== PAGE 3 · HOW IT WORKS ==================== -->
 <section class="page page--dark">
   <div class="page__mark">02 · Механика</div>
   <div class="page__num">03 / 15</div>
@@ -818,7 +802,7 @@ body{
     <div class="kicker">Реальные истории</div>
     <h2 class="h-sec">Когда <em>идеальное</em><br>резюме не проходит</h2>
 
-    <div class="g2" style="margin-top:14px">
+    <div class="g2" style="margin-top:12px">
       <div class="callout" style="margin-top:0;border-left:5px solid var(--red)">
         <div class="callout__title">Отказ через 11 минут</div>
         <p>«На прошлой неделе мне прилетел отказ с hh через 11 минут после отклика. Я специально засёк, потому что подумал — ну не может живой человек так быстро. Компания поставила AI-фильтр. Компания ставит ATS, который автоматически режет 70% кандидатов по совпадению слов».</p>
@@ -841,7 +825,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--filled" style="margin-top:14px">
+    <div class="callout callout--filled" style="margin-top:12px">
       <div class="callout__title">Общий паттерн</div>
       <p>Тысячи соискателей по всей России описывают одну и ту же ситуацию: идеальное соответствие вакансии → мгновенный шаблонный отказ → никакой обратной связи → даже не открыли резюме.</p>
     </div>
@@ -853,7 +837,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 5 · AGE & GENDER (red) ==================== -->
+<!-- ==================== PAGE 5 · AGE & GENDER ==================== -->
 <section class="page page--red">
   <div class="page__mark" style="color:rgba(255,255,255,.75)">04 · Дискриминация</div>
   <div class="page__num" style="color:rgba(255,255,255,.75)">05 / 15</div>
@@ -910,7 +894,7 @@ body{
     <div class="kicker">Почему это происходит</div>
     <h2 class="h-sec">Алгоритмы<br>повторяют <em>наши ошибки</em></h2>
 
-    <div class="g2" style="margin-top:14px">
+    <div class="g2" style="margin-top:12px">
       <div class="callout" style="margin-top:0">
         <div class="callout__title">01 · Нетипичная траектория</div>
         <p>Специалистов, которых трансформация рынка труда вынудила сменить сферу, hh.ru «с головой» сдаёт в едином профиле кандидата. Большинство ИИ-рекрутеров не будут церемониться с «неподходящим» последним местом работы.</p>
@@ -929,7 +913,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--red">
+    <div class="callout callout--red" style="margin-top:12px">
       <div class="callout__title">Гендерный разрыв — 13 лет максимум</div>
       <p>По итогам 2025 года гендерный разрыв в уровне зарплат стал максимальным за 13 лет. Женщины на крупных и средних предприятиях зарабатывали в среднем на 33,7% меньше мужчин. Алгоритмы, обученные на исторических данных, воспроизводят и масштабируют это неравенство.</p>
     </div>
@@ -941,7 +925,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 7 · OPACITY (dark) ==================== -->
+<!-- ==================== PAGE 7 · OPACITY ==================== -->
 <section class="page page--dark">
   <div class="page__mark">06 · Прозрачность</div>
   <div class="page__num">07 / 15</div>
@@ -950,7 +934,7 @@ body{
     <div class="kicker">Чёрный ящик</div>
     <h2 class="h-sec" style="color:#fff">Непрозрачность<br><em>как система</em></h2>
 
-    <div class="g2" style="margin-top:14px">
+    <div class="g2" style="margin-top:12px">
       <div class="callout" style="margin:0">
         <div class="callout__title">Алгоритмы — «чёрный ящик»</div>
         <p>Механизм ранжирования hh.ru во многом неясен. Пользователи всё чаще жалуются на непрозрачность умного поиска и алгоритмов платформы. Даже в комментариях к постам тема всплывает минимум 5 раз.</p>
@@ -961,7 +945,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--red" style="margin-top:16px">
+    <div class="callout callout--red" style="margin-top:14px">
       <div class="callout__title" style="color:var(--red)">Парадокс</div>
       <p style="color:rgba(255,255,255,.85)">Платформа заявляет, что помогает соискателям находить работу быстрее. Но пользователи всё чаще жалуются: работодатели не отвечают на отклики, приходят только автоматические отказы, в выдаче встречаются публикации, потерявшие актуальность.</p>
     </div>
@@ -1025,7 +1009,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 9 · GLOBAL CONTEXT (yellow) ==================== -->
+<!-- ==================== PAGE 9 · GLOBAL CONTEXT ==================== -->
 <section class="page page--yellow">
   <div class="page__mark">08 · Мировой опыт</div>
   <div class="page__num">09 / 15</div>
@@ -1039,7 +1023,7 @@ body{
       долларов, восстановление сотрудников, прецеденты — всё это уже прошли США и Европа.
     </p>
 
-    <div class="tl-list" style="border-top-color:var(--ink);margin-top:14px">
+    <div class="tl-list" style="border-top-color:var(--ink);margin-top:12px">
       <div class="tl-row" style="border-bottom-color:rgba(11,11,11,.15)">
         <div class="tl-row__date" style="color:var(--red)">2024–2025<small style="color:var(--ink-3)">США · коллективный</small></div>
         <div class="tl-row__body">
@@ -1070,7 +1054,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--yellow" style="margin-top:16px">
+    <div class="callout callout--yellow" style="margin-top:14px">
       <div class="callout__title">Что это значит для России</div>
       <p>Проблема не уникальна. Но если на Западе уже есть прецеденты и иски, то в России пока нет ни отдельного закона, ни системной практики. Мы в начале пути.</p>
     </div>
@@ -1091,7 +1075,7 @@ body{
     <div class="kicker">Российские прецеденты</div>
     <h2 class="h-sec">Суды, <em>которые</em><br>уже были</h2>
 
-    <div class="tl-list" style="margin-top:14px">
+    <div class="tl-list" style="margin-top:12px">
       <div class="tl-row">
         <div class="tl-row__date">2025<small>Москва · ТК РФ</small></div>
         <div class="tl-row__body">
@@ -1115,7 +1099,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--red" style="margin-top:14px">
+    <div class="callout callout--red" style="margin-top:12px">
       <div class="callout__title">Общий паттерн российских дел</div>
       <p>Суды восстанавливают сотрудников, но опираются на общие нормы ТК, а не на специальное регулирование ИИ. Прозрачность алгоритмов не закреплена в праве. Регулятор пока наблюдает.</p>
     </div>
@@ -1127,7 +1111,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 11 · REGULATION (dark) ==================== -->
+<!-- ==================== PAGE 11 · REGULATION ==================== -->
 <section class="page page--dark">
   <div class="page__mark">10 · Регулирование</div>
   <div class="page__num">11 / 15</div>
@@ -1136,7 +1120,7 @@ body{
     <div class="kicker">Что уже регулируют</div>
     <h2 class="h-sec" style="color:#fff">Российские <em>нормы</em><br>и пробелы</h2>
 
-    <div class="tl-list" style="border-top-color:#fff;margin-top:14px">
+    <div class="tl-list" style="border-top-color:#fff;margin-top:12px">
       <div class="tl-row" style="border-bottom-color:rgba(255,255,255,.15)">
         <div class="tl-row__date" style="color:var(--red)">Июль 2025<small style="color:rgba(255,255,255,.5)">Кодекс ЦБ РФ</small></div>
         <div class="tl-row__body">
@@ -1160,7 +1144,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--red" style="margin-top:16px">
+    <div class="callout callout--red" style="margin-top:14px">
       <div class="callout__title" style="color:var(--red)">Презумпция ответственности</div>
       <p style="color:rgba(255,255,255,.85)">В законопроекте Минцифры закрепляется принципиальный сдвиг: если нейросеть допустила ошибку, отвечать будет владелец сервиса — если не докажет, что предпринял все меры для предотвращения рисков. Бремя доказывания переносится с пострадавшего на разработчика.</p>
     </div>
@@ -1183,7 +1167,7 @@ body{
 
     <div class="callout callout--red" style="margin-top:0">
       <div class="callout__title">Соискателям</div>
-      <ol class="list-num" style="margin-top:8px">
+      <ol class="list-num" style="margin-top:6px">
         <li>Проверьте структурные поля резюме: город, готовность к переезду, опыт, зарплата. Отказ за 15 минут — это они.</li>
         <li>Дублируйте резюме под разные названия должностей — алгоритм ищет зеркальное отражение вакансии</li>
         <li>Откликайтесь в окно 08:00–11:00, когда HR просматривает отклики вручную</li>
@@ -1191,9 +1175,9 @@ body{
       </ol>
     </div>
 
-    <div class="callout" style="margin-top:12px">
+    <div class="callout" style="margin-top:10px">
       <div class="callout__title">Работодателям</div>
-      <ol class="list-num" style="margin-top:8px">
+      <ol class="list-num" style="margin-top:6px">
         <li>Проверьте, не используются ли в вашей ATS прокси-признаки: почтовый индекс, тип вуза</li>
         <li>Убедитесь, что финальное решение о найме принимает человек, а не алгоритм</li>
         <li>Задокументируйте процедуру «слепого» ревью отклонённых резюме</li>
@@ -1201,9 +1185,9 @@ body{
       </ol>
     </div>
 
-    <div class="callout callout--filled" style="margin-top:12px">
+    <div class="callout callout--filled" style="margin-top:10px">
       <div class="callout__title">Разработчикам</div>
-      <ol class="list-num" style="margin-top:8px">
+      <ol class="list-num" style="margin-top:6px">
         <li style="color:rgba(255,255,255,.85);border-bottom-color:rgba(255,255,255,.15)">Использование SHAP и LIME для интерпретации решений</li>
         <li style="color:rgba(255,255,255,.85);border-bottom-color:rgba(255,255,255,.15)">Тестирование на репрезентативной выборке</li>
         <li style="color:rgba(255,255,255,.85);border-bottom:none">Fairness-метрики на этапе проектирования, а не после запуска</li>
@@ -1217,16 +1201,16 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 13 · CHECKLIST ==================== -->
+<!-- ==================== PAGE 13 · AUDIT ==================== -->
 <section class="page">
-  <div class="page__mark">12 · Чек-лист</div>
+  <div class="page__mark">12 · Аудит</div>
   <div class="page__num">13 / 15</div>
 
   <div class="page__inner" style="padding-top:16mm">
-    <div class="kicker">Аудит системы</div>
+    <div class="kicker">Проверка системы</div>
     <h2 class="h-sec">Как проверить<br>свою <em>систему</em></h2>
 
-    <div class="g2" style="margin-top:14px">
+    <div class="g2" style="margin-top:12px">
       <div>
         <div class="tag tag--red">Шаг 1 · Данные</div>
         <ol class="list-num">
@@ -1245,7 +1229,7 @@ body{
       </div>
     </div>
 
-    <div class="tag tag--red" style="margin-top:12px">Шаг 3 · Мониторинг</div>
+    <div class="tag tag--red" style="margin-top:10px">Шаг 3 · Мониторинг</div>
     <div class="bars">
       <div class="bar">
         <div class="bar__head"><span>Разница в частоте отказов между группами</span><b>&lt;10%</b></div>
@@ -1261,7 +1245,7 @@ body{
       </div>
     </div>
 
-    <div class="callout callout--red" style="margin-top:14px">
+    <div class="callout callout--red" style="margin-top:12px">
       <div class="callout__title">Красные флаги</div>
       <p>Вендор отказывается предоставить Fairness-метрики · разница ошибок между группами превышает 10% · нет механизма апелляции · модель обучена на данных старше 2 лет без пересмотра.</p>
     </div>
@@ -1269,11 +1253,11 @@ body{
 
   <div class="page__footer">
     <span>hh.ru · Алгоритмическая предвзятость</span>
-    <span>12 · Чек-лист</span>
+    <span>12 · Аудит</span>
   </div>
 </section>
 
-<!-- ==================== PAGE 14 · CONCLUSION (dark) ==================== -->
+<!-- ==================== PAGE 14 · CONCLUSION ==================== -->
 <section class="page page--dark">
   <div class="page__mark">13 · Итоги</div>
   <div class="page__num">14 / 15</div>
@@ -1282,7 +1266,7 @@ body{
     <div class="kicker">Итоги разбора</div>
     <h2 class="h-sec" style="color:#fff">Алгоритм <em>не судья</em></h2>
 
-    <div class="g2" style="margin-top:14px">
+    <div class="g2" style="margin-top:12px">
       <div class="callout" style="margin:0">
         <div class="callout__title">Что мы узнали</div>
         <p>Алгоритмы hh.ru отсеивают 70% кандидатов до просмотра человеком. Фильтр работает по структурным полям, а не по тексту. В личном кабинете можно задать пол и возраст. Гендерный разрыв в зарплатах — максимальный за 13 лет.</p>
@@ -1293,13 +1277,13 @@ body{
       </div>
     </div>
 
-    <blockquote class="quote" style="margin-top:18px;color:#fff;font-size:20px">
+    <blockquote class="quote" style="margin-top:16px;color:#fff;font-size:18px">
       Платформа показала, что мой профиль на 100% соответствует вакансии,
       но через 5 минут после отклика — шаблонный отказ.
       <cite>Из комментариев в сети</cite>
     </blockquote>
 
-    <div class="expert" style="margin-top:16px">
+    <div class="expert" style="margin-top:14px">
       <div class="expert__photo">
         <img src="C9FFD587-B19C-4F19-BC04-3869F3C6DBF0.jpeg" alt="Алексей Прохоров">
       </div>
@@ -1320,7 +1304,7 @@ body{
   </div>
 </section>
 
-<!-- ==================== PAGE 15 · CTA (red) ==================== -->
+<!-- ==================== PAGE 15 · CTA ==================== -->
 <section class="page page--red">
   <div class="page__mark" style="color:rgba(255,255,255,.75)">14 · Финал</div>
   <div class="page__num" style="color:rgba(255,255,255,.75)">15 / 15</div>
@@ -1331,13 +1315,13 @@ body{
       Что дальше
     </div>
 
-    <h2 class="h-sec" style="color:#fff;font-size:52px;margin-top:16px">
+    <h2 class="h-sec" style="color:#fff;font-size:48px;margin-top:14px">
       Разобрались<br>
       <em style="color:#0B0B0B">в предвзятости —</em><br>
       пора действовать
     </h2>
 
-    <p class="lede" style="color:rgba(255,255,255,.95);max-width:560px;margin-top:14px">
+    <p class="lede" style="color:rgba(255,255,255,.95);max-width:540px;margin-top:12px">
       Если хотите глубже — в книге «Записки директора по искусственному интеллекту»
       собраны практические инструменты, кейсы и инсайты, которых не найти
       в учебниках. А в MAX-канале — свежие разборы регуляторных изменений
@@ -1345,25 +1329,25 @@ body{
     </p>
 
     <div class="g3" style="margin-top:auto">
-      <div style="padding:20px 18px;border:2px solid rgba(255,255,255,.5)">
-        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">163</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.85);line-height:1.4">страницы в книге</div>
+      <div style="padding:18px 16px;border:2px solid rgba(255,255,255,.5)">
+        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">163</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.4">страницы в книге</div>
       </div>
-      <div style="padding:20px 18px;border:2px solid rgba(255,255,255,.5)">
-        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">13</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.85);line-height:1.4">глав и разделов</div>
+      <div style="padding:18px 16px;border:2px solid rgba(255,255,255,.5)">
+        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">13</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.4">глав и разделов</div>
       </div>
-      <div style="padding:20px 18px;border:2px solid rgba(255,255,255,.5)">
-        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">14</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.85);line-height:1.4">ИИ-агентов в совете</div>
+      <div style="padding:18px 16px;border:2px solid rgba(255,255,255,.5)">
+        <div style="font-family:'Archivo Black',sans-serif;font-weight:900;font-size:44px;line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:8px">14</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.4">ИИ-агентов в совете</div>
       </div>
     </div>
 
-    <div style="margin-top:18px;display:flex;gap:20px;flex-wrap:wrap">
-      <a href="mailto:director.brands@yandex.ru?subject=Заказ книги" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;color:#D3222A;font-family:'Archivo Black',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">
+    <div style="margin-top:16px;display:flex;gap:16px;flex-wrap:wrap">
+      <a href="mailto:director.brands@yandex.ru?subject=Заказ книги" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:#fff;color:#D3222A;font-family:'Archivo Black',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">
         Заказать книгу →
       </a>
-      <a href="https://max.ru/alproailife" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:2px solid rgba(255,255,255,.7);color:#fff;font-family:'Archivo Black',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">
+      <a href="https://max.ru/alproailife" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:2px solid rgba(255,255,255,.7);color:#fff;font-family:'Archivo Black',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">
         MAX-канал @alproailife →
       </a>
     </div>
